@@ -1,5 +1,7 @@
 # resources
-https://github.com/lightbody/browsermob-proxy/
+[proxy svc](https://github.com/lightbody/browsermob-proxy/)
+[theme](http://ironsummitmedia.github.io/startbootstrap-grayscale/)
+[font awesome](https://fortawesome.github.io/Font-Awesome/icons/)
 
 # install
 

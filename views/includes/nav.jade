@@ -1,0 +1,28 @@
+nav.navbar.navbar-custom.navbar-fixed-top(role='navigation')
+  .container
+    .navbar-header
+      button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-main-collapse')
+        i.fa.fa-bars
+      // a.navbar-brand.page-scroll(href='#page-top')
+      a.navbar-brand.page-scroll(href='/')
+        i.fa.fa-home
+        span.light  Snapshot
+      a.navbar-brand.page-scroll(href='/play')
+        i.fa.fa-play-circle
+        span.light  Play
+      a.navbar-brand.page-scroll(href='/record')
+        i.fa.fa-circle-o
+        span.light  Rec
+    // Collect the nav links, forms, and other content for toggling
+    .collapse.navbar-collapse.navbar-right.navbar-main-collapse
+      ul.nav.navbar-nav
+        // Hidden li included to remove active class from about link when scrolled up past about section
+        li.hidden
+          a(href='/#page-top')
+        li
+          a.page-scroll(href='/#about') About
+        li
+          a.page-scroll(href='/#download') Download
+    // /.navbar-collapse
+  // /.container
+// Intro Header
