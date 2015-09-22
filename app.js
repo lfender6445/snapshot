@@ -30,7 +30,18 @@ app.configure('production', function(){
 // Routes
 
 app.get('/', routes.index);
-app.get('/play', routes.play);
+app.use('/play', routes.play);
+
+app.get('/play/:profile', function(req, res){
+  var profile = req.param('profile');
+  var opts = {
+    title: 'Play ' + profile,
+    profile: profile,
+    show_environments: true
+  };
+  res.render('play', opts);
+});
+
 app.get('/record', routes.record);
 
 app.listen(3000);

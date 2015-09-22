@@ -1,8 +1,3 @@
-
-/*
- * GET home page.
- */
-
 exports.index = function(req, res){
   res.render('index', { title: 'Express' });
 };
@@ -11,5 +6,4 @@ exports.play = function(req, res){
 }
 exports.record = function(req, res){
   res.render('record', { title: 'Record' });
-
 }

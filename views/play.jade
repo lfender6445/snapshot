@@ -4,5 +4,35 @@ section.container.content-section.text-center
   .row
     .col-lg-8.col-lg-offset-2
       h1= title
+      if profile
+        // interatctions
+        .impressions
+          h2 impressions
+          // pages
+          // flag the different tag
+          p home
+          table.table
+            thead
+              tr
+                th env
+                th tag
+            tbody
+              tr
+                td
+                  a(href="") ci #{profile}
+                 td tag
+              tr
+                td
+                  a(href="") qa #{profile}
+                td tag
+              tr
+                td
+                  a(href="") prod #{profile}
+                td tag
+        //.clicks
+        //  h2 clicks
+      else
+        p Select a profile:
+        | <a href="/play/ag"> ApartmentGuide </a>
 
 include ./includes/footer.jade
