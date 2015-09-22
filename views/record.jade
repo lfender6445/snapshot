@@ -3,7 +3,27 @@ include ./includes/nav.jade
 section.container.content-section.text-center
   .row
     .col-lg-8.col-lg-offset-2
-      h1= 'playback'
-      p Welcome to #{title}
+      h1 #{title} a test
+      form
+        h2 as a user
+        table.table
+          thead
+            tr
+              th &nbsp;
+              th &nbsp;
+          tbody
+            tr
+              td when i visit
+              td
+                | <input class='form-control' type='text' placeholder='url' />
+            tr
+              td and i click on
+              td
+                | <input class='form-control' type='text' placeholder='css selector' />
+            tr
+              td i should see
+              td
+                | <input class='form-control' type='text' placeholder='pixel'/>
+         button.preview.btn.btn-primary preview
 
 include ./includes/footer.jade

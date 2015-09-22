@@ -1,13 +1,14 @@
 include ./includes/nav.jade
 
-section.container.content-section.text-center
+section.container.content-section
   .row
-    .col-lg-8.col-lg-offset-2
+    .col-lg-8.col-lg-offset-2.text-center
       h1= title
-      if profile
-        include ./play/impressions.jade
-        include ./play/clicks.jade
-      else
+    if profile
+      include ./play/impressions.jade
+      include ./play/clicks.jade
+    else
+      .col-lg-8.col-lg-offset-2.text-center
         p Select a profile:
         | <a href="/play/ag"> ApartmentGuide </a>
 

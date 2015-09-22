@@ -35,7 +35,7 @@ app.use('/play', routes.play);
 app.get('/play/:profile', function(req, res){
   var profile = req.param('profile');
   var opts = {
-    title: 'Play ' + profile,
+    title: 'Playback for ' + profile,
     profile: profile,
     show_environments: true
   };
