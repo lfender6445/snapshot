@@ -1,14 +1,9 @@
 {
-  "name": "snapshot",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Luke Fender <lfender6445@gmail.com> (http://github.com/lfender6445)",
-  "license": "ISC",
-  "dependencies": {
-    "pcap": "0.4.1"
+    "name": "snapshot"
+  , "version": "0.0.1"
+  , "private": true
+  , "dependencies": {
+      "express": "2.5.8"
+    , "jade": ">= 0.0.1"
   }
 }
