@@ -6,6 +6,8 @@
 var express = require('express')
   , routes = require('./routes');
 
+var request = require('request');
+
 var app = module.exports = express.createServer();
 
 // Configuration
@@ -36,10 +38,26 @@ app.get('/play/:profile', function(req, res){
   var profile = req.param('profile');
   var opts = {
     title: 'Playback for ' + profile,
-    profile: profile,
-    show_environments: true
+    profile: profile
   };
   res.render('play', opts);
+});
+
+app.post('/play/:profile/har', function(req, res){
+  console.log(req);
+  // var data = req.body;
+  // for(env in data){
+  //   var url = data[env];
+  //   request(url, function (error, response, body) {
+  //     if (!error && response.statusCode == 200) {
+  //       console.log('request ' + url + 'successfully')
+  //     } else {
+  //       console.log('could not communicate with ' + url);
+  //     }
+  //   });
+  // }
+  // how to start a break point on server
+  // req.body appears to contain post params
 });
 
 app.get('/record', routes.record);

@@ -1,2 +1,8 @@
 script.
- window.config.profile = "#{profile}"
+  window.config = {};
+  var profile = "#{profile}";
+  if(profile.length){
+   window.config.profile = profile;
+  } else {
+    console.log('no profile')
+  }

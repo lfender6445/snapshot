@@ -1,5 +1,4 @@
 // interactions
-include ../includes/js_config.jade
 
 .impressions
   .text-center
@@ -24,7 +23,7 @@ include ../includes/js_config.jade
                 input(type='radio', name='compare_ci' disabled='disabled')
                 | ci
           td.env_url
-            a(href="http://www.ci.apartmentguide.com") ci #{profile}
+            a(href="http://www.ci.apartmentguide.com" data-env='ci') ci #{profile}
           td tag
         tr
           td.env
@@ -33,7 +32,7 @@ include ../includes/js_config.jade
                 input(type='radio', name='compare_qa' disabled='disabled')
                 | qa
           td.env_url
-            a(href="http://www.qa.apartmentguide.com") qa #{profile}
+            a(href="http://www.qa.apartmentguide.com" data-env='qa') qa #{profile}
           td tag
         tr
           td.env
@@ -42,7 +41,7 @@ include ../includes/js_config.jade
                 input(type='radio', name='compare_prod' checked='checked')
                 | prod
           td.env_url
-            a(href="www.apartmentguide.com") prod #{profile}
+            a(href="http://www.apartmentguide.com" data-env='prod') prod #{profile}
           td tag
     button.btn.btn-primary(type='button') Edit
 hr
