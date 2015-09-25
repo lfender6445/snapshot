@@ -1,11 +1,14 @@
 {
-    "name": "snapshot"
-  , "version": "0.0.1"
-  , "private": true
-  , "dependencies": {
-      "express": "2.5.8"
-    , "jade": ">= 0.0.1"
-    , "request": "2.63.0"
+  "name": "snapshot",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "browsermob-proxy": "^1.0.9",
+    "express": "2.5.8",
+    "jade": ">= 0.0.1",
+    "phantomjs": "^1.9.18",
+    "request": "2.63.0",
+    "spooky": "^0.2.5"
   },
   "scripts": {
     "start": "node app.js"

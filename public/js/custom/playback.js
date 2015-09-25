@@ -63,7 +63,6 @@ var BmpApi = {
     if(data){
       var params = $.param(data);
       var endpoint = '/play/' + window.config.profile + '/har';
-      debugger;
       $.post(endpoint, params);
     }
   }

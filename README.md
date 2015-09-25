@@ -1,4 +1,5 @@
 # resources
+[casper](http://casperjs.org/)
 [proxy svc](https://github.com/lightbody/browsermob-proxy/)
 [theme](http://ironsummitmedia.github.io/startbootstrap-grayscale/)
 [font awesome](https://fortawesome.github.io/Font-Awesome/icons/)
@@ -23,3 +24,9 @@ note, the following steps must be executed in order
 - add local.snapshot.com to hosts and setup nginx reverse proxy via conf/snapshot.con
 
 
+# debugging
+- start app
+  - http_proxy=http://127.0.0.1:8081 node --debug app.js
+- start debugger
+  - node-inspector --web-port=8083
+- set breakpoints
