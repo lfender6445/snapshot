@@ -5,9 +5,11 @@ var BmpApi = {
     if(window.config.profile){
       var utc = new Date().toJSON();
       var href = utc + '_' + window.config.profile;
-      var endpoint = '/bmp/proxy/' + (window.config.port || port) + '/har/?initialPageRef=' + href;
+      var endpoint = '/bmp/proxy/' + (window.config.port || port) + '/har';
+      debugger;
       $.ajax({
         url: endpoint,
+        data: 'initialPageRef=' + href,
         type: 'PUT',
         success: function(data) {
           $(document).trigger('readyToDownload', data);
@@ -24,6 +26,7 @@ var BmpApi = {
   },
   checkApi: function(){
     var createProxy = function(){
+      debugger;
       $.post('/bmp/proxy', function(data){
         if(data.port){
           data.proxyList = [{port: data.port}];
@@ -63,6 +66,8 @@ var BmpApi = {
     if(data){
       var params = $.param(data);
       var endpoint = '/play/' + window.config.profile + '/har';
+      console.log('downloadImpressionHarData');
+      console.log(params);
       $.post(endpoint, params);
     }
   }
@@ -93,11 +98,13 @@ var Playback = function(){
 
   var cacheHarData = function(){
     BmpApi.checkApi();
-    $(document).on('readyToDownload', function(){
+    console.log('running playback code');
+    $(document).on('readyToDownload', function(data){
       var urlData = getUrls();
       BmpApi.downloadImpressionHarData(urlData);
     });
     $(document).on('proxyIsReady', function(port){
+      console.log('creating href')
       BmpApi.createHref(port);
     });
   };
