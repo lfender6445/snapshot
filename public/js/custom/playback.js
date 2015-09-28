@@ -1,12 +1,9 @@
-// this page should be renamed to record or current
-
 var BmpApi = {
   createHref: function(port){
     if(window.config.profile){
       var utc = new Date().toJSON();
       var href = utc + '_' + window.config.profile;
       var endpoint = '/bmp/proxy/' + (window.config.port || port) + '/har';
-      debugger;
       $.ajax({
         url: endpoint,
         data: 'initialPageRef=' + href,
@@ -26,7 +23,6 @@ var BmpApi = {
   },
   checkApi: function(){
     var createProxy = function(){
-      debugger;
       $.post('/bmp/proxy', function(data){
         if(data.port){
           data.proxyList = [{port: data.port}];
@@ -58,8 +54,6 @@ var BmpApi = {
         createProxy();
       });
     };
-    // connect to proxy server
-    // add a proxy port or fail
     getProxy();
   },
   downloadImpressionHarData: function(data){
@@ -85,17 +79,6 @@ var Playback = function(){
     return data;
   };
 
-  //var tagFor = function(url){
-  //  return url;
-  //};
-
-  //var compareCurrentTags = function(){
-  //  var urls = getUrls();
-  //  $.each(urls, function(url){
-  //    var tag = tagFor(url);
-  //  });
-  //};
-
   var cacheHarData = function(){
     BmpApi.checkApi();
     console.log('running playback code');
@@ -111,9 +94,6 @@ var Playback = function(){
 
   $(document).ready(function(){
     cacheHarData();
-    // send off url(s) to internal request endpoint via params via ajax
-    // encode array in url
-    // endpoint will eventually issue requests on server via casper
   });
 };
 
